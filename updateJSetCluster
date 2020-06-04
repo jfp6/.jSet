@@ -1,0 +1,15 @@
+#!/bin/bash
+
+scp -r ~/.jSet gold:~/.jSet
+scp -r ~/.jSet silver:~/.jSet
+scp -r ~/.jSet nickel:~/.jSet
+scp -r ~/.jSet niobium:~/.jSet
+scp -r ~/.jSet platinum:~/.jSet
+scp -r ~/.jSet palladium:~/.jSet
+scp -r ~/.jSet titanium:~/.jSet
+scp -r ~/.jSet rhodium:~/.jSet
+scp -r ~/.jSet cobalt:~/.jSet
+scp -r ~/.jSet scandium:~/.jSet
+scp -r ~/.jSet uranium:~/.jSet
+scp -r ~/.jSet aluminum:~/.jSet
+
