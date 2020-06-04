@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "source ~/.jSet/jbashrc" >> ~/.bashrc
+echo "source ~/.jSet/jbashrc"
+
+
+

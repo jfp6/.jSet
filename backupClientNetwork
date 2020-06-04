@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cp /etc/network/interfaces interfaces
+cp /etc/modules modules
+cp /etc/hosts hosts
+cp /etc/default/opensm opensm
+echo "Download network"

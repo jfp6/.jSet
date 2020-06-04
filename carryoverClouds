@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python ~/OpenFOAM/joseph-dev/scripts/carryover/mainClouds.py "$@"

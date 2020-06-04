@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sudo cp interfaces /etc/network/interfaces
+sudo cp modules /etc/modules
+sudo cp hosts /etc/hosts
+sudo cp opensm /etc/default/opensm 
+echo "Upload network"

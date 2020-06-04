@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo ./installX2go
+sudo ./mkdirNFSClient
+sudo ./shortcutsVim
+sudo ./removeLogout
+sudo ./handyPackages
+sudo ./installOFDev
+sudo ./echoJbashrc
+

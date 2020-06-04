@@ -1,0 +1,174 @@
+#!/bin/bash
+echo "
+      J. Prince 11/14/2013
+     "
+
+USAGE="
+      USAGE: $0 -m <name> 
+"
+
+
+#Use getopts to pass the flags to variables
+while getopts "m:" opt; do
+  case $opt in
+    m) if [ -n $OPTARG ]; then
+	MACHINE=$OPTARG
+	fi
+      ;;
+    \?)
+      echo "$USAGE" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+if [ $MACHINE == "aluminum" ]
+    then
+    echo "start aluminum"
+    sudo mount /dev/sdg1 /media/joseph/bach
+    sudo mount /dev/sdf1 /media/joseph/mozart
+    sudo mount /dev/sdc1  /media/joseph/haydn
+    sudo mount /dev/sda1 /media/joseph/brahms
+    sudo mount /dev/sdb1 /media/joseph/vivaldi
+    sudo mount /dev/sdh /media/joseph/work
+    sudo mount /dev/sdd1 /media/joseph/chopin
+
+    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
+
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+    sudo /etc/init.d/opensmd start
+
+fi
+
+if [ $MACHINE == "gold" ]
+    then
+    echo "start cluster client caldera "
+    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/home /mnt/nfs/home
+    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
+    
+    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
+    
+
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+ 
+    sudo /etc/init.d/opensmd start
+fi
+
+if [ $MACHINE == "dell" ]
+    then
+    echo "start dell"
+    sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
+    sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
+    sudo mount 172.17.1.168:/media/joseph/haydn /mnt/nfs/haydn
+    
+    #cd /media/
+    #mount -t vboxsf Dropbox /media/windows-share/
+    #cd ~
+fi
+
+if [ $MACHINE == "precision" ]
+    then
+    echo "start precision"
+    sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.168:/home /mnt/nfs/home
+    sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
+    sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
+    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.168:/media/joseph/haydn /mnt/nfs/haydn
+
+    sudo ./.screenlayout/screen.sh
+    sudo mount -t vboxsf K_DRIVE /media/joseph/arc
+    sudo mount -t vboxsf J_DRIVE /media/joseph/joan
+fi 
+if [ $MACHINE == "iron" ]
+    then
+    echo "start iron - just drives"
+    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/home /mnt/nfs/home
+    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
+    
+    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
+    
+
+    xsetroot -solid "#333333"
+fi 
+
+if [ $MACHINE == "envy" ]
+    then
+    echo "start envy"
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+fi
+
+if [ $MACHINE == "alpha" ]
+    then
+    echo "start alpha"
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+fi
+if [ $MACHINE == "bravo" ]
+    then
+    echo "start bravo"
+    sudo mount alpha:/home /mnt/nfs/alphaHome
+    sudo mount india:/home /mnt/nfs/indiaHome
+fi
+if [ $MACHINE == "india" ]
+    then
+    echo "start india"
+    sudo mount alpha:/home /mnt/nfs/alphaHome
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+    sudo service smbd restart
+    sudo service nmbd restart
+fi
+
+if [ $MACHINE == "rhodium" ]
+    then
+    echo "start rhodium"
+    sudo mount /dev/sda1 /media/joseph/telemann
+    sudo mount /dev/nvme1n1p1 /media/joseph/handel
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+    #sudo /etc/init.d/opensmd start
+
+    # from iron
+    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/home /mnt/nfs/home
+    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
+    xsetroot -solid "#333333"
+
+
+fi
+
+
+
+

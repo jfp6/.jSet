@@ -1,0 +1,7 @@
+sudo ./installOFDev
+sudo ./installX2go
+sudo apt install lubuntu-desktop
+sudo ./shortcutsVim
+sudo ./echoJbashrc
+sudo apt install python-pip
+sudo pip install PyFoam

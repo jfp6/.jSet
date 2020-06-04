@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo mv /etc/xdg/autostart/light-locker.desktop /etc/xdg/autostart/light-locker.desktop.bak
+
+
+

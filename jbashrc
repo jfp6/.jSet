@@ -1,0 +1,93 @@
+# OpenFOAM
+export PYTHONPATH="${PYTHONPATH}:/opt/paraviewopenfoam56/lib/python2.7/site-packages"
+export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib"
+export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib/paraview-5.6"
+
+
+alias of4='source /opt/openfoam4/etc/bashrc'
+alias ofe='source $HOME/foam/foam-extend-3.2/etc/bashrc'
+alias ofp='source $HOME/OpenFOAM/OpenFOAM-v1912/etc/bashrc'
+alias ofdev='source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc'
+alias py3='conda activate py3'
+alias ofo='source /opt/openfoam-dev/etc/bashrc'
+alias de3='conda deactivate'
+alias oxygen='firefox file://$WM_PROJECT_DIR/doc/Doxygen/html/index.html'
+alias userGuide='xpdf $WM_PROJECT_DIR/doc/Guides-a4/UserGuide.pdf'
+alias makeVideo10='ffmpeg -r 10 -i image.%04d.png atest10.mp4 -qscale 1'
+alias makeVideo20='ffmpeg -r 20 -i image.%04d.png atest20.mp4 -qscale 1'
+alias makeVideo30='ffmpeg -r 30 -i image.%04d.png atest30.mp4 -qscale 1'
+alias makeVideo40='ffmpeg -r 40 -i image.%04d.png atest40.mp4 -qscale 1'
+alias makeVideo100='ffmpeg -r 100 -i image.%04d.png atest100.mp4 -qscale 1'
+alias mplayer='mplayer -loop 0 -fs atest*'
+alias cCount='checkMesh |grep cell'
+alias tLog='tail -f log | grep -E '"'"'(Time|deltaT)'"'"
+alias rPar='reconstructPar -newTimes'
+alias pPar='~/.jSet/pReconstructPar'
+alias moz='cd mozart/of30x/'
+alias his='history | grep'
+alias para='paraFoam -builtin'
+alias lsg='tree -L 3 /mnt/nfs'
+alias lsa='tree -L 3 /media/joseph'
+alias cal='cd /home/joseph/dropbox/ME/caldera/'
+alias cl='clear'
+alias tl='tail -f log'
+alias carryover='~/.jSet/carryover'
+alias carryoverClouds='~/.jSet/carryoverClouds'
+alias boxI='surfaceCheck constant/triSurface/inlet.stl| grep Box'
+alias boxO='surfaceCheck constant/triSurface/outlet.stl| grep Box'
+alias boxOS='surfaceCheck constant/triSurface/outletSlurry.stl| grep Box'
+alias boxB='surfaceCheck constant/triSurface/body.stl| grep Box'
+alias boxV='surfaceCheck constant/triSurface/vessel.stl| grep Box'
+alias tri='cd constant/triSurface'
+alias cs='cd ../../'
+alias key='source ~/.jSet/jkeyboard'
+alias lp='bash /home/joseph/brahms/cpu/checkCpus.sh'
+alias jn='jupyter notebook'
+alias tc='~/.jSet/timeCheck/extractLog.sh'
+alias cPar='~/.jSet/cPar'
+directory_stack=~/brahms/.directory_stack
+function pu() {
+        echo $(pwd) >> $directory_stack
+        n=1
+        while read line; do
+        # reading each line
+            echo "$n : $line"
+            n=$((n+1)) 
+        done < $directory_stack
+}
+function po() {
+        [ ! -s $directory_stack ] && return
+        newdir=$(sed -n '$p' $directory_stack)
+        sed -i -e '$d' $directory_stack
+        n=1
+        while read line; do
+        # reading each line
+            echo "$n : $line"
+            cd $line
+            n=$((n+1)) 
+        done < $directory_stack
+        cd $newdir
+
+}
+function pi() {
+n=1
+while read line; do
+# reading each line
+    echo "$n : $line"
+    n=$((n+1)) 
+    done < $directory_stack
+}
+
+function p() {
+n=1
+select=${1:-0}
+while read line; do
+# reading each line
+    if [ "$n" -eq "$select" ];
+        then
+    echo "$n : $line"
+    cd $line
+    fi
+    n=$((n+1)) 
+    done < $directory_stack
+}

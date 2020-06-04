@@ -1,0 +1,60 @@
+#!/bin/bash
+echo "
+      K. Wardle 6/22/09, modified by H. Stadler Dec. 2013
+      J. Prince reduced for robustness and simplicity, Feb 2018
+      bash script to run reconstructPar in pseudo-parallel mode
+      by breaking time directories into multiple ranges
+     "
+     
+USAGE="
+      USAGE: $0 -n <NP> -i <increment> -t (times) tstart
+"
+
+#TODO: add flag to trigger deletion of original processorX directories after successful reconstruction
+# At first check whether any flag is set at all, if not exit with error message
+if [ $# == 0 ]; then
+    echo "$USAGE"
+    exit 1
+fi
+
+#Use getopts to pass the flags to variables
+while getopts "n:o:t:i:" opt; do
+  case $opt in
+    n) if [ -n $OPTARG ]; then
+	NJOBS=$OPTARG
+	fi
+      ;;
+    i) if [ -n $OPTARG ]; then
+	INCREMENT=$OPTARG
+	fi
+      ;;
+    t) if [ -n $OPTARG ]; then
+	TLOW=$OPTARG
+	fi
+      ;;
+    \?)
+      echo "$USAGE" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+APPNAME="reconstructPar"
+
+echo "running $APPNAME in pseudo-parallel mode on $NJOBS processors"
+
+#count the number of time directories
+NSTEPS=$(($(ls -d processor0/[0-9]*/ | wc -l)-1))
+NINITAL=$(ls -d [0-9]*/ | wc -l) ##count time directories in case root dir, this will include 0
+
+
+echo "$(($NJOBS*$INCREMENT))"
+for i in `seq 0 $(($NJOBS-1))`
+    do
+        echo "Running $APPNAME -time '$(($TLOW+$INCREMENT*$i)):$(($TLOW+$INCREMENT*$i+$INCREMENT))' > rLog$i &"
+        $($APPNAME -time $(($TLOW+$INCREMENT*$i)):$(($TLOW+$INCREMENT*$i+$INCREMENT)) > rLog$TLOW$i &)
+    done

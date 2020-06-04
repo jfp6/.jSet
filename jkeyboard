@@ -1,0 +1,9 @@
+
+# Keyboard and mouse ----
+xkbset exp sticky -twokey -latchlock
+xkbset sticky -twokey -latchlock
+setxkbmap -option keypad:pointerkeys
+xkbset ma 60 10 20 3 2
+setxkbmap -option caps:swapescape
+setxkbmap -option altwin:ctrl_alt_win
+
