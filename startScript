@@ -37,13 +37,20 @@ if [ $MACHINE == "aluminum" ]
     sudo mount /dev/sdh /media/joseph/work
     sudo mount /dev/sdd1 /media/joseph/chopin
 
-    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
-    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
-
     sudo exportfs -a
     sudo service nfs-kernel-server start
     sudo /etc/init.d/opensmd start
 
+fi
+
+if [ $MACHINE == "aluminumDrives" ]
+    then
+    echo "start aluminum"
+    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
+
+    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
 fi
 
 if [ $MACHINE == "gold" ]
@@ -61,6 +68,8 @@ if [ $MACHINE == "gold" ]
     sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
     sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
     
+    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
@@ -169,6 +178,13 @@ if [ $MACHINE == "rhodium" ]
 
 fi
 
+if [ $MACHINE == "rhodiumDrives" ]
+    then
+    echo "start rhodium drives only"
+    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
+
+fi
 
 if [ $MACHINE == "lithium" ]
     then
@@ -188,10 +204,11 @@ if [ $MACHINE == "lithium" ]
     sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
     sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
     sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
+    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
     xsetroot -solid "#333333"
 
 
-
-
 fi
+
 

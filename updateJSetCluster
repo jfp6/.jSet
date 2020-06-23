@@ -12,4 +12,5 @@ scp -r ~/.jSet cobalt:~/.jSet
 scp -r ~/.jSet scandium:~/.jSet
 scp -r ~/.jSet uranium:~/.jSet
 scp -r ~/.jSet aluminum:~/.jSet
+scp -r ~/.jSet lithium:~/.jSet
 
