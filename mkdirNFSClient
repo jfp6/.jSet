@@ -26,7 +26,7 @@ ln -s /mnt/nfs/vivaldi/ ~/vivaldi
 ln -s /mnt/nfs/chopin/ ~/chopin
 ln -s /mnt/nfs/telemann ~/telemann
 ln -s /mnt/nfs/handel ~/handel
-ln -s /mnt/nfs/handel ~/rameau
-ln -s /mnt/nfs/handel ~/scarlatti
+ln -s /mnt/nfs/rameau ~/rameau
+ln -s /mnt/nfs/scarlatti ~/scarlatti
 echo "add soft links"
 
