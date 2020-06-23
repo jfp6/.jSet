@@ -170,5 +170,28 @@ if [ $MACHINE == "rhodium" ]
 fi
 
 
+if [ $MACHINE == "lithium" ]
+    then
+    echo "start lithium"
+    sudo mount /dev/sda1 /media/joseph/scarlatti
+    sudo mount /dev/sdb1 /media/joseph/rameau
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+    #sudo /etc/init.d/opensmd start
 
+    # from iron
+    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/home /mnt/nfs/home
+    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
+    xsetroot -solid "#333333"
+
+
+
+
+fi
 
