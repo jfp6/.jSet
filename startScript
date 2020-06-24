@@ -162,7 +162,7 @@ if [ $MACHINE == "rhodium" ]
     sudo mount /dev/nvme1n1p1 /media/joseph/handel
     sudo exportfs -a
     sudo service nfs-kernel-server start
-    #sudo /etc/init.d/opensmd start
+    sudo /etc/init.d/opensmd start
 
     # from iron
     sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
@@ -193,7 +193,7 @@ if [ $MACHINE == "lithium" ]
     sudo mount /dev/sdb1 /media/joseph/rameau
     sudo exportfs -a
     sudo service nfs-kernel-server start
-    #sudo /etc/init.d/opensmd start
+    sudo /etc/init.d/opensmd start
 
     # from iron
     sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
