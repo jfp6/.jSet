@@ -44,6 +44,7 @@ alias key='source ~/.jSet/jkeyboard'
 alias lp='bash /home/joseph/brahms/cpu/checkCpus.sh'
 alias jn='jupyter notebook'
 alias tc='~/.jSet/timeCheck/extractLog.sh'
+alias wtc='watch ~/.jSet/timeCheck/extractLog.sh'
 alias cPar='~/.jSet/cPar'
 directory_stack=~/brahms/.directory_stack
 function pu() {
