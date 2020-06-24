@@ -122,6 +122,8 @@ if [ $MACHINE == "iron" ]
     sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
     sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
     
+    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
 
     xsetroot -solid "#333333"
 fi 
