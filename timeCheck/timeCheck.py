@@ -70,7 +70,7 @@ runTime = simTime*realDeltaTavg/deltaTavg/3600/f
 
 # print results
 print('End time is',endTime,'currently at',currentTime)
-print(f'deltaT is {deltaTavg:.3e} s') 
+print(f'deltaT is {deltaTavg:.3e} s in {realDeltaTavg:.3e} s') 
 print('Time to finish simulation',round(runTime[0],1),'hours,',round(runTime[0]/24,1),'days')
 print('Time to run 1 sec',round(runTime[1],1),'hours,',round(runTime[1]/24,1),'days')
 print('Time to run 10 sec',round(runTime[2],1),'hours,',round(runTime[2]/24,1),'days')
