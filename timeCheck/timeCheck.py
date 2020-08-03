@@ -44,6 +44,9 @@ with open('timeCheck.txt','r') as file:
                 currentTime = getLastFloatFromString(line,'=')
             except:
                 print('Preliminary')
+        if findWholeWord('Date')(line):
+            deltaT = np.array([])
+            realTime = np.array([])
 
 # get average simulation time step size
 deltaTavg = np.average(deltaT)
