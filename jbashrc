@@ -46,6 +46,7 @@ alias jn='jupyter notebook'
 alias tc='~/.jSet/timeCheck/extractLog.sh'
 alias wtc='watch ~/.jSet/timeCheck/extractLog.sh'
 alias cPar='~/.jSet/cPar'
+alias power='~/.jSet/power'
 directory_stack=~/brahms/.directory_stack
 function pu() {
         echo $(pwd) >> $directory_stack
