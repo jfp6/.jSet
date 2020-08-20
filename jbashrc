@@ -47,7 +47,7 @@ alias tc='~/.jSet/timeCheck/extractLog.sh'
 alias wtc='watch ~/.jSet/timeCheck/extractLog.sh'
 alias cPar='~/.jSet/cPar'
 alias power='~/.jSet/power'
-alias pyRPar='~/.jSet/pPar1'
+alias pyPar='~/.jSet/pPar1'
 directory_stack=~/brahms/.directory_stack
 function pu() {
         echo $(pwd) >> $directory_stack
