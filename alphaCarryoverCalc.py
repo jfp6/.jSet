@@ -230,7 +230,7 @@ if caseCount > 4:
 
 plt.ylim(yMin,yMax)
 plt.grid()
-plt.xlabel('Simulation Time (s)')
-plt.ylabel('% Carryover')
-plt.legend(loc='upper left')
+plt.xlabel('Time (s)')
+plt.ylabel('% Slurry Carryover')
+plt.legend()
 plt.show()
