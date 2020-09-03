@@ -200,15 +200,15 @@ if case1Path != 'none':
     caseCount += 1
     os.chdir(case1Path)
     time1V,power1 = getData(v1,efficiency1,omega1)
-elif case2Path != 'none':
+if case2Path != 'none':
     caseCount += 1
     os.chdir(case2Path)
     time2V,power2 = getData(v2,efficiency2,omega2)
-elif case3Path != 'none':
+if case3Path != 'none':
     caseCount += 1
     os.chdir(case3Path)
     time3V,power3 = getData(v3,efficiency3,omega3)
-elif case4Path != 'none':
+if case4Path != 'none':
     caseCount += 1
     os.chdir(case4Path)
     time4V,power4 = getData(v4,efficiency4,omega4)
