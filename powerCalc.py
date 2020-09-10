@@ -190,7 +190,7 @@ def getData(v,efficiency,omega,a):
     timeA = np.asarray(timeV)
     indexStart = np.abs(timeA-a[0]).argmin()
     if a[1] != 'end':
-        indexEnd = np.abs(timeV-a[1]).argmin()
+        indexEnd = np.abs(timeA-a[1]).argmin()
         for i in range(len(power)):
             avg.append(np.average(power[i][indexStart:indexEnd]))
     else:
