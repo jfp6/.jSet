@@ -48,6 +48,7 @@ alias wtc='watch ~/.jSet/timeCheck/extractLog.sh'
 alias cPar='~/.jSet/cPar'
 alias power='~/.jSet/power'
 alias pyPar='~/.jSet/pPar1'
+alias aCarryover='~/.jSet/alphaCarryover'
 directory_stack=~/brahms/.directory_stack
 function pu() {
         echo $(pwd) >> $directory_stack
