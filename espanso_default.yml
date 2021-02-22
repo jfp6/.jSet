@@ -71,3 +71,8 @@ matches:
 
   - trigger: ":susdea2"
     replace: "stand? They have been interviewed and found worthy to be ordained to the office of a Deacon in the Aaronic Priesthood. We propose that they be sustained. Those in favor may manifest it by the uplifted hand. Those opposed, if any, may manifest it. Thank you.\n"
+
+  - trigger: ":jour"
+    replace: "\\begin{diary}{title}{01.01.21}\n\\end{diary}\n"
+
+
