@@ -13,6 +13,7 @@ sudo mkdir -p /mnt/nfs/telemann
 sudo mkdir -p /mnt/nfs/handel
 sudo mkdir -p /mnt/nfs/rameau
 sudo mkdir -p /mnt/nfs/scarlatti
+sudo mkdir -p /mnt/nfs/verdi
 echo "mkdir nfs directories"
 
 ln -s /mnt/nfs/bach/ ~/bach
@@ -28,5 +29,6 @@ ln -s /mnt/nfs/telemann ~/telemann
 ln -s /mnt/nfs/handel ~/handel
 ln -s /mnt/nfs/rameau ~/rameau
 ln -s /mnt/nfs/scarlatti ~/scarlatti
+ln -s /mnt/nfs/verdi ~/verdi
 echo "add soft links"
 
