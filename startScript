@@ -49,7 +49,7 @@ if [ $MACHINE == "aluminumDrives" ]
     sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
     sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
 
-    #sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
     sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
     sudo mount 172.17.1.243:/media/joseph/verdi /mnt/nfs/verdi
 fi
@@ -69,7 +69,7 @@ if [ $MACHINE == "gold" ]
     sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
     sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
     
-    #sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
     sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
     sudo mount 172.17.1.243:/media/joseph/verdi /mnt/nfs/verdi
 
@@ -124,7 +124,7 @@ if [ $MACHINE == "iron" ]
     sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
     sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
     
-    #sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
     sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
     sudo mount 172.17.1.243:/media/joseph/verdi /mnt/nfs/verdi
 
@@ -186,7 +186,7 @@ fi
 if [ $MACHINE == "rhodiumDrives" ]
     then
     echo "start rhodium drives only"
-    #sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
     sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
     sudo mount 172.17.1.243:/media/joseph/verdi /mnt/nfs/verdi
 
@@ -196,7 +196,7 @@ if [ $MACHINE == "lithium" ]
     then
     echo "start lithium"
     sudo mount /dev/sda1 /media/joseph/scarlatti
-    #sudo mount /dev/sdb1 /media/joseph/rameau
+    sudo mount /dev/sdb1 /media/joseph/rameau
     sudo mount /dev/nvme1n1p1 /media/joseph/verdi
     sudo exportfs -a
     sudo service nfs-kernel-server start
