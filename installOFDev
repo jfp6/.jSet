@@ -7,4 +7,4 @@ sudo apt-get update
 sudo apt-get -y install openfoam-dev
 # of 2012
 wget -q -O - https://dl.openfoam/add-debian-repo.sh | sudo bash
-sudo apt-get install openfoam2012-default
+sudo apt-get -y install openfoam2012-default
