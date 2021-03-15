@@ -5,3 +5,6 @@ sudo sh -c "wget -O - http://dl.openfoam.org/gpg.key | apt-key add -"
 sudo add-apt-repository http://dl.openfoam.org/ubuntu
 sudo apt-get update
 sudo apt-get -y install openfoam-dev
+# of 2012
+wget -q -O - https://dl.openfoam/add-debian-repo.sh | sudo bash
+sudo apt-get install openfoam2012-default
