@@ -10,7 +10,10 @@ def getLastFloatFromString(string,delimiter):
     if words[0] == 'endTime':
         num = float(words[-1][:-2])
     elif words[0] == 'ExecutionTime':
-        num = (float(words[2]),float(words[7]))
+        try:
+            num = (float(words[2]),float(words[7]))
+        except:
+            num = (float(words[2]),float(words[2]))
     else:
         num = float(words[-1])
     return num
