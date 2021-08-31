@@ -28,6 +28,52 @@ matches:
         type: shell
         params:
           cmd: "echo Hello from your shell"
+
+  # Shell commands
+  - trigger: ":bonf"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "explorer \"F:\\Customers\\New Opportunities\\Raizen (Bonfim)\""
+
+  # Shell commands
+  - trigger: ":cnrl"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "explorer \"F:\\Customers\\Current Customers\\Canadian Natural Resources\""
+
+  # Shell commands
+  - trigger: ":long"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "explorer \"F:\\Customers\\Current Customers\\Long Harbour (Vale)\""
+
+  # Shell commands
+  - trigger: ":kbr"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "explorer \"F:\\Customers\\New Opportunities\\KBR\""
+
+  # Shell commands
+  - trigger: ":pdf"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "explorer \"F:\\Departments\\Engineering\\PDF to Customers\""
+
   - trigger: ":winc"
     replace: "{{output}}"
     Vars:
