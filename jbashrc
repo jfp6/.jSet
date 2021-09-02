@@ -3,12 +3,12 @@ export PYTHONPATH="${PYTHONPATH}:/opt/paraviewopenfoam56/lib/python2.7/site-pack
 export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib"
 export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib/paraview-5.6"
 
-
 alias of4='source /opt/openfoam4/etc/bashrc'
 alias ofe='source $HOME/foam/foam-extend-3.2/etc/bashrc'
 alias ofp='source $HOME/OpenFOAM/OpenFOAM-v2006/etc/bashrc'
 alias of2012='source /usr/lib/openfoam/openfoam2012/etc/bashrc'
 alias ofdev='source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc'
+alias of9='source /opt/openfoam9/etc/bashrc'
 alias py3='conda activate py3'
 alias ofo='source /opt/openfoam-dev/etc/bashrc'
 alias de3='conda deactivate'
@@ -50,6 +50,7 @@ alias cPar='~/.jSet/cPar'
 alias power='~/.jSet/power'
 alias pyPar='~/.jSet/pPar1'
 alias aCarryover='~/.jSet/alphaCarryover'
+alias calc='source ~/calc/bin/activate'
 directory_stack=~/brahms/.directory_stack
 function pu() {
         echo $(pwd) >> $directory_stack
