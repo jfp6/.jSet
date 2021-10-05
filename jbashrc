@@ -3,14 +3,14 @@ export PYTHONPATH="${PYTHONPATH}:/opt/paraviewopenfoam56/lib/python2.7/site-pack
 export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib"
 export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib/paraview-5.6"
 
-alias of4='source /opt/openfoam4/etc/bashrc'
+alias ofdev='source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc'
 alias ofe='source $HOME/foam/foam-extend-3.2/etc/bashrc'
 alias ofp='source $HOME/OpenFOAM/OpenFOAM-v2006/etc/bashrc'
 alias of2012='source /usr/lib/openfoam/openfoam2012/etc/bashrc'
-alias ofdev='source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc'
+alias of2106='source /usr/lib/openfoam/openfoam2106/etc/bashrc'
 alias of9='source /opt/openfoam9/etc/bashrc'
-alias py3='conda activate py3'
 alias ofo='source /opt/openfoam-dev/etc/bashrc'
+alias py3='conda activate py3'
 alias de3='conda deactivate'
 alias oxygen='firefox file://$WM_PROJECT_DIR/doc/Doxygen/html/index.html'
 alias userGuide='xpdf $WM_PROJECT_DIR/doc/Guides-a4/UserGuide.pdf'
