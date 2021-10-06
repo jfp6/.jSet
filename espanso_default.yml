@@ -1,5 +1,4 @@
 # espanso configuration file
-
 # This is the default configuration file, change it as you like it
 # You can refer to the official documentation:
 # https://espanso.org/docs/
@@ -8,8 +7,23 @@
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
+  - trigger: ":python"
+    replace: "from iapws import IAPWS97\nimport math\nimport numpy as np\nimport os, sys\nimport matplotlib.pyplot as plt\nfrom pint import UnitRegistry\nur = UnitRegistry()\nur_ = ur.Quantity\npi = math.pi\n"
+
+  - trigger: ":pyplot"
+    replace: "font = {'family' : 'sans-serif',\n'weight' : 'normal',\n'size'   : 13}\nplt.rc('font', **font)\nstyles = ['k-','b--','r:','g-.','m-','c--']\n\nplt.figure(1,figsize=(8,6))\n#plt.title('TITLE')\nplt.plot(X,Y,'o-',linewidth = 3,label='trace')\n\nplt.ylabel('label')\n#plt.ylim([0,100])\n#plt.yticks()\nplt.xlabel('label')\n#plt.xlim([0,100])\n#plt.xticks()\n\nplt.grid()\nplt.legend(loc='best')\nplt.ion()\nplt.savefig('name.jpeg')\nplt.show()"
+
+  # Simple text replacement thermo
+  - trigger: ":thermo"
+    replace: "import thermo as th\nfrom thermo.chemical import Mixture\nair = Mixture('air', T=(TAir + 9 + 273.15), P=.9*1.01e5)\nnuAir = air.nu # m^2/s\nPrAir = air.Pr\nkAir = air.k # W/m*C\nrhoAir = air.rho # kg/m**3\nCpAir = air.Cp # J/kg*K"
+
+  # Simple text replacement thermo
+  - trigger: ":quote"
+    replace: "Customer Site:\nContact Name:\nBudgetary Quote: Yes / No\nPart Numbers (including material codes and Q-codes):\nPart Descriptions:\nPart Quantities:\nDesired Lead Time: Standard / Expedited (if expedited provide a reason for the expediting request and desired lead time):\nWho will send the quote to the customer?\nAre the pertinent drawings, data sheets, and/or customer RFQ attached?\nDay and time by which quote is desired:\n"
+
+  # Simple text replacement
+  - trigger: ":rsync"
+    replace: "rsync -a -h source destination/."
 
   # Dates
   - trigger: ":date"
@@ -74,54 +88,29 @@ matches:
         params:
           cmd: "explorer \"F:\\Departments\\Engineering\\PDF to Customers\""
 
+  # Shell commands
+  - trigger: ":trip"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "explorer \"F:\\Communications\\Trip\ Reports\""
+
+  # Shell commands
+  - trigger: ":eng"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "explorer \"F:\\Departments\\Engineering\""
+
+  # Shell commands
   - trigger: ":winc"
     replace: "{{output}}"
-    Vars:
+    vars:
       - name: output
         type: shell
         params:
           cmd: "calc.exe"
-
-  - trigger: ":python"
-    replace: "from iapws import IAPWS97\nimport math\nimport numpy as np\nimport os, sys\nimport matplotlib.pyplot as plt\nfrom pint import UnitRegistry\nur = UnitRegistry()\nur_ = ur.Quantity\npi = math.pi\n"
-
-  - trigger: ":thermo"
-    replace: "import thermo as th\nfrom thermo.chemical import Mixture\nair = Mixture('air', T=(TAir + 9 + 273.15), P=.9*1.01e5)\nnuAir = air.nu # m^2/s\nPrAir = air.Pr\nkAir = air.k # W/m*C\nrhoAir = air.rho # kg/m**3\nCpAir = air.Cp # J/kg*K"
-
-  - trigger: ":suscal1"
-    replace: "The following have received callings in the ward--if you could please stand as your name is read--"
-
-  - trigger: ":suscal2"
-    replace: "And we propose that they be sustained. Those in favor may manifest it by the uplifted hand. Those opposed, if any, may manifest it."
-
-  - trigger: ":relcal1"
-    replace: "The following have been released from their callings in the Ward:"
-
-  - trigger: ":relcal2"
-    replace: "And we propose that they be given a vote of thanks. Those who wish to express their appreciation may manifest it by the uplifted hand."
-
-  - trigger: ":newmem1"
-    replace: "We have received the membership records for the following individuals and would like to welcome them into our ward. If you would please stand as your name is read:"
-
-  - trigger: ":newmem2"
-    replace: "All those who would like to extend a hand of fellowship, please do so by the uplifted hand. Thank you."
-
-  - trigger: ":baby1"
-    replace: "We are privileged to witness a baby blessing today. Brother and Sister $$$$$ are blessing their"
-
-  - trigger: ":baby2"
-    replace: "will be giving the blessing. Those Melchizedek Priesthood holders who have previously been invited to participate in the circle may now come forward."
-
-  - trigger: ":susdea1"
-    replace: "Could we have "
-
-  - trigger: ":susdea2"
-    replace: "stand? They have been interviewed and found worthy to be ordained to the office of a Deacon in the Aaronic Priesthood. We propose that they be sustained. Those in favor may manifest it by the uplifted hand. Those opposed, if any, may manifest it. Thank you."
-
-  - trigger: ":baptism"
-    replace: "Could ___ come to the stand...___ were baptized yesterday as the newest members of our ward. We would like to congratulate them on this accomplishment, we will present them with baptism certificate very soon."
-
-  - trigger: ":jour"
-    replace: "\\begin{diary}{title}{01.01.21}\n\\end{diary}"
-
-
