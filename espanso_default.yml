@@ -32,7 +32,7 @@ matches:
       - name: mydate
         type: date
         params:
-          format: "%m/%d/%Y"
+          format: "%d/%m/%Y"
 
   # Shell commands
   - trigger: ":shell"
@@ -114,3 +114,39 @@ matches:
         type: shell
         params:
           cmd: "calc.exe"
+          
+  - trigger: ":suscal1"
+    replace: "The following have received callings in the ward--if you could please stand as your name is read--"
+
+  - trigger: ":suscal2"
+    replace: "And we propose that they be sustained. Those in favor may manifest it by the uplifted hand. Those opposed, if any, may manifest it."
+
+  - trigger: ":relcal1"
+    replace: "The following have been released from their callings in the Ward:"
+
+  - trigger: ":relcal2"
+    replace: "And we propose that they be given a vote of thanks. Those who wish to express their appreciation may manifest it by the uplifted hand."
+
+  - trigger: ":newmem1"
+    replace: "We have received the membership records for the following individuals and would like to welcome them into our ward. If you would please stand as your name is read:"
+
+  - trigger: ":newmem2"
+    replace: "All those who would like to extend a hand of fellowship, please do so by the uplifted hand. Thank you."
+
+  - trigger: ":baby1"
+    replace: "We are privileged to witness a baby blessing today. Brother and Sister $$$$$ are blessing their"
+
+  - trigger: ":baby2"
+    replace: "will be giving the blessing. Those Melchizedek Priesthood holders who have previously been invited to participate in the circle may now come forward."
+
+  - trigger: ":susdea1"
+    replace: "Could we have "
+
+  - trigger: ":susdea2"
+    replace: "stand? They have been interviewed and found worthy to be ordained to the office of a Deacon in the Aaronic Priesthood. We propose that they be sustained. Those in favor may manifest it by the uplifted hand. Those opposed, if any, may manifest it. Thank you."
+
+  - trigger: ":baptism"
+    replace: "Could ___ come to the stand...___ were baptized yesterday as the newest members of our ward. We would like to congratulate them on this accomplishment, we will present them with baptism certificate very soon."
+
+  - trigger: ":jour"
+    replace: "\\begin{diary}{title}{01.01.21}\n\\end{diary}"
