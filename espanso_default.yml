@@ -80,6 +80,24 @@ matches:
           cmd: "explorer \"F:\\Customers\\New Opportunities\\KBR\""
 
   # Shell commands
+  - trigger: ":new"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "explorer \"F:\\Customers\\New Opportunities\""
+
+  # Shell commands
+  - trigger: ":cur"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "explorer \"F:\\Customers\\Current Customers\""
+
+  # Shell commands
   - trigger: ":pdf"
     replace: "{{output}}"
     vars:
