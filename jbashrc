@@ -52,6 +52,8 @@ alias power='~/.jSet/power'
 alias pyPar='~/.jSet/pPar1'
 alias aCarryover='~/.jSet/alphaCarryover'
 alias calc='source ~/calc/bin/activate'
+alias machine21='cp ~/machine/machine21 machines'
+alias machine22='cp ~/machine/machine22 machines'
 directory_stack=~/brahms/.directory_stack
 function pu() {
         echo $(pwd) >> $directory_stack
