@@ -52,8 +52,11 @@ alias power='~/.jSet/power'
 alias pyPar='~/.jSet/pPar1'
 alias aCarryover='~/.jSet/alphaCarryover'
 alias calc='source ~/calc/bin/activate'
-alias machine21='cp ~/OpenFOAM/machine/machine21 machines'
-alias machine22='cp ~/OpenFOAM/machine/machine22 machines'
+alias machine21='cp ~/OpenFOAM/foamUserTemplates/machine/machine21 machines'
+alias machine22='cp ~/OpenFOAM/foamUserTemplates/machine/machine22 machines'
+alias machine31='cp ~/OpenFOAM/foamUserTemplates/machine/machine31 machines'
+alias machine32='cp ~/OpenFOAM/foamUserTemplates/machine/machine32 machines'
+alias machine33='cp ~/OpenFOAM/foamUserTemplates/machine/machine33 machines'
 directory_stack=~/brahms/.directory_stack
 function pu() {
         echo $(pwd) >> $directory_stack
