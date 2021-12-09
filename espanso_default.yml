@@ -125,6 +125,15 @@ matches:
           cmd: "explorer \"F:\\Departments\\Engineering\""
 
   # Shell commands
+  - trigger: ":one"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "explorer \"C:\\Users\\jprince\\OneDrive - Caldera Engineering\""
+
+  # Shell commands
   - trigger: ":winc"
     replace: "{{output}}"
     vars:
