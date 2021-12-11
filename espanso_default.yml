@@ -25,6 +25,10 @@ matches:
   - trigger: ":rsync"
     replace: "rsync -a -h source destination/."
 
+  # add path to git bash
+  - trigger: ":git"
+    replace: "cd c:/Users/jprince/OneDrive\\ -\\ Caldera\\ Engineering/pythonCode/projects"
+
   # Dates
   - trigger: ":date"
     replace: "{{mydate}}"
