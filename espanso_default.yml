@@ -7,6 +7,12 @@
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
+  - trigger: ":jose"
+    replace: "joseph.f.prince@gmail.com"
+
+  - trigger: ":jpri"
+    replace: "jprince@calderaengineering.com"
+
   - trigger: ":python"
     replace: "from iapws import IAPWS97\nimport math\nimport numpy as np\nimport os, sys\nimport matplotlib.pyplot as plt\nfrom pint import UnitRegistry\nur = UnitRegistry()\nur_ = ur.Quantity\npi = math.pi\n"
 
@@ -24,10 +30,6 @@ matches:
   # Simple text replacement
   - trigger: ":rsync"
     replace: "rsync -a -h source destination/."
-
-  # add path to git bash
-  - trigger: ":git"
-    replace: "cd c:/Users/jprince/OneDrive\\ -\\ Caldera\\ Engineering/pythonCode/projects"
 
   # Dates
   - trigger: ":date"
@@ -84,24 +86,6 @@ matches:
           cmd: "explorer \"F:\\Customers\\New Opportunities\\KBR\""
 
   # Shell commands
-  - trigger: ":new"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "explorer \"F:\\Customers\\New Opportunities\""
-
-  # Shell commands
-  - trigger: ":cur"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "explorer \"F:\\Customers\\Current Customers\""
-
-  # Shell commands
   - trigger: ":pdf"
     replace: "{{output}}"
     vars:
@@ -129,15 +113,6 @@ matches:
           cmd: "explorer \"F:\\Departments\\Engineering\""
 
   # Shell commands
-  - trigger: ":one"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "explorer \"C:\\Users\\jprince\\OneDrive - Caldera Engineering\""
-
-  # Shell commands
   - trigger: ":winc"
     replace: "{{output}}"
     vars:
@@ -146,23 +121,14 @@ matches:
         params:
           cmd: "calc.exe"
           
-  - trigger: ":suscal1"
-    replace: "The following have received callings in the ward--if you could please stand as your name is read--"
+  - trigger: ":suscal"
+    replace: "The following have received callings in the ward--if you could please stand as your name is read--\n$|$\nAnd we propose that they be sustained. Those in favor may manifest it by the uplifted hand. Those opposed, if any, may manifest it."
 
-  - trigger: ":suscal2"
-    replace: "And we propose that they be sustained. Those in favor may manifest it by the uplifted hand. Those opposed, if any, may manifest it."
+  - trigger: ":relcal"
+    replace: "The following have been released from their callings in the Ward:\n$|$\nAnd we propose that they be given a vote of thanks. Those who wish to express their appreciation may manifest it by the uplifted hand."
 
-  - trigger: ":relcal1"
-    replace: "The following have been released from their callings in the Ward:"
-
-  - trigger: ":relcal2"
-    replace: "And we propose that they be given a vote of thanks. Those who wish to express their appreciation may manifest it by the uplifted hand."
-
-  - trigger: ":newmem1"
-    replace: "We have received the membership records for the following individuals and would like to welcome them into our ward. If you would please stand as your name is read:"
-
-  - trigger: ":newmem2"
-    replace: "All those who would like to extend a hand of fellowship, please do so by the uplifted hand. Thank you."
+  - trigger: ":newmem"
+    replace: "We have received the membership records for the following individuals and would like to welcome them into our ward. If you would please stand as your name is read:\n$|$\nAll those who would like to extend a hand of fellowship, please do so by the uplifted hand. Thank you."
 
   - trigger: ":baby1"
     replace: "We are privileged to witness a baby blessing today. Brother and Sister $$$$$ are blessing their"
@@ -170,14 +136,83 @@ matches:
   - trigger: ":baby2"
     replace: "will be giving the blessing. Those Melchizedek Priesthood holders who have previously been invited to participate in the circle may now come forward."
 
-  - trigger: ":susdea1"
-    replace: "Could we have "
+  - trigger: ":susaa"
+    replace: "Could we have {{susaa1.name}} stand? {{susaa1.count}} been interviewed and found worthy to be ordained to the office of a {{susaa1.office}} in the Aaronic Priesthood. We propose that {{susaa1.count2}} be sustained. Those in favor may manifest it by the uplifted hand. Those opposed, if any, may manifest it. Thank you."
+    vars:
+      - name: "susaa1"
+        type: form
+        params:
+          layout: "Name: {{name}}\nOffice: {{office}}\nCount: {{count}}\nCount2: {{count2}}"
+          fields:
+            name:
+              multiline: true
+            office:
+              type: list
+              values:
+                - Deacon
+                - Teacher
+                - Priest
+            count:
+              type: list
+              values:
+                - He has
+                - They have
+            count2:
+              type: list
+              values:
+                - he
+                - they
 
-  - trigger: ":susdea2"
-    replace: "stand? They have been interviewed and found worthy to be ordained to the office of a Deacon in the Aaronic Priesthood. We propose that they be sustained. Those in favor may manifest it by the uplifted hand. Those opposed, if any, may manifest it. Thank you."
-
-  - trigger: ":baptism"
-    replace: "Could ___ come to the stand...___ were baptized yesterday as the newest members of our ward. We would like to congratulate them on this accomplishment, we will present them with baptism certificate very soon."
+  - trigger: ":bapt"
+    replace: "Could {{bapt1.first}} {{bapt1.last}} come to the stand... {{bapt1.first}} was baptized yesterday as the newest member of our ward. We would like to congratulate {{bapt1.sex}} on this accomplishment, we will present {{bapt1.first}} with a baptism certificate very soon."
+    vars:
+      - name: "bapt1"
+        type: form
+        params:
+          layout: "First Name: {{first}}\nLast Name: {{last}}\nSex: {{sex}}"
+          fields:
+            first:
+              multiline: false
+            last:
+              multiline: false
+            sex:
+              type: list
+              values:
+                - him
+                - her
 
   - trigger: ":jour"
-    replace: "\\begin{diary}{title}{01.01.21}\n\\end{diary}"
+    replace: "\\begin{diary}{{{jour1.title}}}{{{jour1.date}}}\n$|$\n\\end{diary}"
+    vars:
+      - name: "jour1"
+        type: form
+        params:
+          layout: "Title: {{title}}\nDate: {{date}}"
+          fields:
+            title:
+              multiline: false
+            date:
+              multiline: false
+
+  - trigger: ":coun"
+    replace: "{{coun1.name}}"
+    vars:
+      - name: "coun1"
+        type: form
+        params:
+          layout: "Name: {{name}}"
+          fields:
+            name:
+              type: list
+              values:
+                - Bishop Boothe
+                - Brother Green
+                - Brother Rymer
+                - Brother Baird
+                - Brother Prince
+                - Brother Davis
+                - Brother Kimmel
+                - Pres. Dudley
+                - Pres. Hughes
+                - Pres. Bolton
+                - Pres. Frandsen           
