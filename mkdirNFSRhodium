@@ -1,0 +1,31 @@
+#!/bin/bash
+
+sudo mkdir -p /mnt/nfs/brahms
+sudo mkdir -p /mnt/nfs/rameau
+sudo mkdir -p /mnt/nfs/scarlatti
+sudo mkdir -p /mnt/nfs/verdi
+sudo mkdir -p /mnt/nfs/bach
+sudo mkdir -p /media/cfd/mozart
+sudo mkdir -p /mnt/nfs/work
+sudo mkdir -p /mnt/nfs/haydn
+sudo mkdir -p /mnt/nfs/vivaldi
+sudo mkdir -p /media/cfd/chopin
+sudo mkdir -p /media/cfd/telemann
+sudo mkdir -p /media/cfd/handel
+sudo mkdir -p /mnt/nfs/home
+echo "mkdir nfs directories"
+
+ln -s /mnt/nfs/brahms/ ~/brahms
+ln -s /mnt/nfs/rameau/ ~/rameau
+ln -s /mnt/nfs/scarlatti/ ~/scarlatti
+ln -s /mnt/nfs/verdi/ ~/verdi
+ln -s /mnt/nfs/bach/ ~/bach
+ln -s /media/cfd/mozart/ ~/mozart
+ln -s /mnt/nfs/work/ ~/work
+ln -s /mnt/nfs/haydn/ ~/haydn
+ln -s /mnt/nfs/vivaldi/ ~/vivaldi
+ln -s /media/cfd/chopin/ ~/chopin
+ln -s /media/cfd/telemann/ ~/telemann
+ln -s /media/cfd/handel/ ~/handel
+ln -s /mnt/nfs/home/cfd/OpenFOAM/ ~/OpenFOAM
+echo "add soft links"

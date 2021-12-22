@@ -1,10 +1,20 @@
 #!/bin/bash
 
+sudo apt update
+sudo apt upgrade
+sudo apt install -y net-tools
+sudo apt install -y git
+#cd ~
+#git clone http://www.github.com/jfp6/.jSet
+sudo ~/clusterResources/MLNX_OFED_LINUX-5.5-1.0.3.2-ubuntu20.04-x86_64/mlnxofedinstall --force
+sudo /etc/init.d/opensmd restart
+sudo cp ~/clusterResources/modules /etc/modules
 sudo ./installX2go
 sudo ./mkdirNFSClient
 sudo ./shortcutsVim
-sudo ./removeLogout
 sudo ./handyPackages
 sudo ./installOFDev
 sudo ./echoJbashrc
+sudo ./installSalomeDep
+sudo ./installParaviewDep
 

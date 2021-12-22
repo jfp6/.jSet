@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt-get install -y vim-gnome
-cp lubuntu-rc.xml ../.config/openbox/lubuntu-rc.xml
-echo "copy lubuntu shortcuts"
+sudo apt-get install -y neovim
 cp vimrc ../.vimrc
 echo "copy vimrc"

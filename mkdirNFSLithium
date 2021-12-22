@@ -1,34 +1,31 @@
 #!/bin/bash
 
-sudo mkdir -p /mnt/nfs/brahms
+sudo mkdir -p /media/cfd/brahms
+sudo mkdir -p /media/cfd/rameau
+sudo mkdir -p /media/cfd/scarlatti
+sudo mkdir -p /media/cfd/verdi
 sudo mkdir -p /mnt/nfs/bach
-sudo mkdir -p /mnt/nfs/backup
 sudo mkdir -p /mnt/nfs/mozart
 sudo mkdir -p /mnt/nfs/work
 sudo mkdir -p /mnt/nfs/haydn
-sudo mkdir -p /mnt/nfs/home
 sudo mkdir -p /mnt/nfs/vivaldi
 sudo mkdir -p /mnt/nfs/chopin
 sudo mkdir -p /mnt/nfs/telemann
 sudo mkdir -p /mnt/nfs/handel
-sudo mkdir -p /mnt/nfs/rameau
-sudo mkdir -p /mnt/nfs/scarlatti
-sudo mkdir -p /mnt/nfs/verdi
+#sudo mkdir -p /home
 echo "mkdir nfs directories"
 
+ln -s /media/cfd/brahms/ ~/brahms
+ln -s /media/cfd/rameau/ ~/rameau
+ln -s /media/cfd/scarlatti/ ~/scarlatti
+ln -s /media/cfd/verdi/ ~/verdi
 ln -s /mnt/nfs/bach/ ~/bach
-ln -s /mnt/nfs/brahms/ ~/brahms
-ln -s /mnt/nfs/backup/ ~/backup
 ln -s /mnt/nfs/mozart/ ~/mozart
 ln -s /mnt/nfs/work/ ~/work
 ln -s /mnt/nfs/haydn/ ~/haydn
-ln -s /mnt/nfs/home/cfd/OpenFOAM/ ~/OpenFOAM
 ln -s /mnt/nfs/vivaldi/ ~/vivaldi
 ln -s /mnt/nfs/chopin/ ~/chopin
 ln -s /mnt/nfs/telemann/ ~/telemann
 ln -s /mnt/nfs/handel/ ~/handel
-ln -s /mnt/nfs/rameau/ ~/rameau
-ln -s /mnt/nfs/scarlatti/ ~/scarlatti
-ln -s /mnt/nfs/verdi/ ~/verdi
+#ln -s /mnt/nfs/home/cfd/OpenFOAM/ ~/OpenFOAM
 echo "add soft links"
-
