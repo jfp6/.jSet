@@ -4,11 +4,10 @@ echo "
      "
 
 USAGE="
-      USAGE: $0 -m <name> 
+      USAGE: $0 -m <name>
 "
 
-
-#Use getopts to pass the flags to variables
+# Use getopts to pass the flags to variables
 while getopts "m:" opt; do
   case $opt in
     m) if [ -n $OPTARG ]; then
@@ -28,194 +27,115 @@ done
 
 if [ $MACHINE == "aluminum" ]
     then
-    echo "start aluminum"
-    sudo mount /dev/sdg1 /media/joseph/bach
-    sudo mount /dev/sdf1 /media/joseph/mozart
-    sudo mount /dev/sdc1  /media/joseph/haydn
-    sudo mount /dev/sda1 /media/joseph/brahms
-    sudo mount /dev/sdb1 /media/joseph/vivaldi
-    sudo mount /dev/sdh /media/joseph/work
-    sudo mount /dev/sdd1 /media/joseph/chopin
+    echo "Start Aluminum"
+    sudo mount /dev/sdc /media/cfd/work
+    sudo mount /dev/sdd1 /media/cfd/bach
+    sudo mount /dev/sde1 /media/cfd/vivaldi
+    sudo mount /dev/sda1 /media/cfd/haydn
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
-    sudo /etc/init.d/opensmd start
-
 fi
 
 if [ $MACHINE == "aluminumDrives" ]
     then
-    echo "start aluminum"
-    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
-    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
+    echo "Start Aluminum drives"
+    # Mount drives from Rhodium
+    sudo mount 172.17.1.239:/media/cfd/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.239:/media/cfd/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.239:/media/cfd/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/cfd/handel /mnt/nfs/handel
 
-    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
-    sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
-    sudo mount 172.17.1.243:/media/joseph/verdi /mnt/nfs/verdi
+    # Mount drives from Lithium
+    sudo mount 172.17.1.243:/media/cfd/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.243:/media/cfd/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/cfd/scarlatti /mnt/nfs/scarlatti
+    sudo mount 172.17.1.243:/media/cfd/verdi /mnt/nfs/verdi
+    sudo mount 172.17.1.243:/home /mnt/nfs/home
 fi
 
 if [ $MACHINE == "gold" ]
     then
-    echo "start cluster client caldera "
-    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
-    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
-    sudo mount 172.17.1.232:/home /mnt/nfs/home
-    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
-    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
-    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
-    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
-    
-    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
-    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
-    
-    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
-    sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
-    sudo mount 172.17.1.243:/media/joseph/verdi /mnt/nfs/verdi
+    echo "Start general cluster client"
+    # Mount drives from Aluminum
+    sudo mount 172.17.1.232:/media/cfd/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/media/cfd/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/cfd/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/cfd/haydn /mnt/nfs/haydn
+
+    # Mount drives from Rhodium
+    sudo mount 172.17.1.239:/media/cfd/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.239:/media/cfd/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.239:/media/cfd/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/cfd/handel /mnt/nfs/handel
+
+    # Mount drives from Lithium
+    sudo mount 172.17.1.243:/media/cfd/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.243:/media/cfd/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/cfd/scarlatti /mnt/nfs/scarlatti
+    sudo mount 172.17.1.243:/media/cfd/verdi /mnt/nfs/verdi
+    sudo mount 172.17.1.243:/home /mnt/nfs/home
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
- 
     sudo /etc/init.d/opensmd start
-fi
-
-if [ $MACHINE == "dell" ]
-    then
-    echo "start dell"
-    sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
-    sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
-    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
-    sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
-    sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.168:/media/joseph/haydn /mnt/nfs/haydn
-    
-    #cd /media/
-    #mount -t vboxsf Dropbox /media/windows-share/
-    #cd ~
-fi
-
-if [ $MACHINE == "precision" ]
-    then
-    echo "start precision"
-    sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
-    sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
-    sudo mount 172.17.1.168:/home /mnt/nfs/home
-    sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
-    sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
-    sudo mount 172.17.1.168:/media/joseph/haydn /mnt/nfs/haydn
-
-    sudo ./.screenlayout/screen.sh
-    sudo mount -t vboxsf K_DRIVE /media/joseph/arc
-    sudo mount -t vboxsf J_DRIVE /media/joseph/joan
-fi 
-if [ $MACHINE == "iron" ]
-    then
-    echo "start iron - just drives"
-    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
-    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
-    sudo mount 172.17.1.232:/home /mnt/nfs/home
-    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
-    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
-    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
-    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
-    
-    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
-    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
-    
-    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
-    sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
-    sudo mount 172.17.1.243:/media/joseph/verdi /mnt/nfs/verdi
-
-    xsetroot -solid "#333333"
-fi 
-
-if [ $MACHINE == "envy" ]
-    then
-    echo "start envy"
-    sudo exportfs -a
-    sudo service nfs-kernel-server start
-fi
-
-if [ $MACHINE == "alpha" ]
-    then
-    echo "start alpha"
-    sudo exportfs -a
-    sudo service nfs-kernel-server start
-fi
-if [ $MACHINE == "bravo" ]
-    then
-    echo "start bravo"
-    sudo mount alpha:/home /mnt/nfs/alphaHome
-    sudo mount india:/home /mnt/nfs/indiaHome
-fi
-if [ $MACHINE == "india" ]
-    then
-    echo "start india"
-    sudo mount alpha:/home /mnt/nfs/alphaHome
-    sudo exportfs -a
-    sudo service nfs-kernel-server start
-    sudo service smbd restart
-    sudo service nmbd restart
 fi
 
 if [ $MACHINE == "rhodium" ]
     then
-    echo "start rhodium"
-    sudo mount /dev/sda1 /media/joseph/telemann
-    sudo mount /dev/nvme1n1p1 /media/joseph/handel
+    echo "Start Rhodium"
+    sudo mount /dev/sdc1 /media/cfd/telemann
+    sudo mount /dev/nvme1n1p1 /media/cfd/handel
+    sudo mount /dev/sda1 /media/cfd/mozart
+    sudo mount /dev/sdb1 /media/cfd/chopin
+
     sudo exportfs -a
     sudo service nfs-kernel-server start
     sudo /etc/init.d/opensmd start
 
-    # from iron
-    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
-    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
-    sudo mount 172.17.1.232:/home /mnt/nfs/home
-    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
-    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
-    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
-    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
+    # Mount drives from Aluminum
+    sudo mount 172.17.1.232:/media/cfd/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/media/cfd/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/cfd/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/cfd/haydn /mnt/nfs/haydn
+
     xsetroot -solid "#333333"
-
-
 fi
 
 if [ $MACHINE == "rhodiumDrives" ]
     then
-    echo "start rhodium drives only"
-    sudo mount 172.17.1.243:/media/joseph/rameau /mnt/nfs/rameau
-    sudo mount 172.17.1.243:/media/joseph/scarlatti /mnt/nfs/scarlatti
-    sudo mount 172.17.1.243:/media/joseph/verdi /mnt/nfs/verdi
-
+    echo "Start Rhodium drives only"
+    # Mount drives from Lithium
+    sudo mount 172.17.1.243:/media/cfd/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.243:/media/cfd/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/cfd/scarlatti /mnt/nfs/scarlatti
+    sudo mount 172.17.1.243:/media/cfd/verdi /mnt/nfs/verdi
+    sudo mount 172.17.1.243:/home /mnt/nfs/home
 fi
 
 if [ $MACHINE == "lithium" ]
     then
-    echo "start lithium"
-    sudo mount /dev/sda1 /media/joseph/scarlatti
-    sudo mount /dev/sdb1 /media/joseph/rameau
-    sudo mount /dev/nvme1n1p1 /media/joseph/verdi
+    echo "Start Lithium"
+    sudo mount /dev/sda1 /media/cfd/brahms
+    sudo mount /dev/sdc1 /media/cfd/rameau
+    sudo mount /dev/sdb1 /media/cfd/scarlatti
+    sudo mount /dev/nvme1n1p1 /media/cfd/verdi
+
     sudo exportfs -a
     sudo service nfs-kernel-server start
     sudo /etc/init.d/opensmd start
 
-    # from iron
-    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
-    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
-    sudo mount 172.17.1.232:/home /mnt/nfs/home
-    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
-    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
-    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
-    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
-    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
-    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
+    # Mount drives from Aluminum
+    sudo mount 172.17.1.232:/media/cfd/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/media/cfd/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/cfd/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/cfd/haydn /mnt/nfs/haydn
+
+    # Mount drives from Rhodium
+    sudo mount 172.17.1.239:/media/cfd/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.239:/media/cfd/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.239:/media/cfd/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/cfd/handel /mnt/nfs/handel
+
     xsetroot -solid "#333333"
-
-
 fi
-
-
