@@ -1,16 +1,16 @@
 #!/bin/bash
 
-scp -r ~/.jSet cfd@gold:~/.jSet
-scp -r ~/.jSet cfd@silver:~/.jSet
-scp -r ~/.jSet cfd@nickel:~/.jSet
-scp -r ~/.jSet cfd@niobium:~/.jSet
-scp -r ~/.jSet cfd@platinum:~/.jSet
-scp -r ~/.jSet cfd@palladium:~/.jSet
-scp -r ~/.jSet cfd@titanium:~/.jSet
-scp -r ~/.jSet cfd@rhodium:~/.jSet
-scp -r ~/.jSet cfd@cobalt:~/.jSet
-scp -r ~/.jSet cfd@scandium:~/.jSet
-scp -r ~/.jSet cfd@uranium:~/.jSet
-scp -r ~/.jSet cfd@aluminum:~/.jSet
-scp -r ~/.jSet cfd@lithium:~/.jSet
+scp -r ~/.jSet cfd@gold:~/.
+scp -r ~/.jSet cfd@silver:~/.
+scp -r ~/.jSet cfd@nickel:~/.
+scp -r ~/.jSet cfd@niobium:~/.
+scp -r ~/.jSet cfd@platinum:~/.
+scp -r ~/.jSet cfd@palladium:~/.
+scp -r ~/.jSet cfd@titanium:~/.
+scp -r ~/.jSet cfd@rhodium:~/.
+scp -r ~/.jSet cfd@cobalt:~/.
+scp -r ~/.jSet cfd@scandium:~/.
+scp -r ~/.jSet cfd@uranium:~/.
+scp -r ~/.jSet cfd@aluminum:~/.
+scp -r ~/.jSet cfd@lithium:~/.
 
