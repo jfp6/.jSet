@@ -4,10 +4,12 @@ export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib"
 export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib/paraview-5.6"
 
 alias ofdev='source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc'
+alias of9c='source $HOME/OpenFOAM/OpenFOAM-9/etc/bashrc'
 alias ofe='source $HOME/foam/foam-extend-3.2/etc/bashrc'
 alias ofp='source $HOME/OpenFOAM/OpenFOAM-v2006/etc/bashrc'
 alias of2012='source /usr/lib/openfoam/openfoam2012/etc/bashrc'
 alias of2106='source /usr/lib/openfoam/openfoam2106/etc/bashrc'
+alias of2112='source /usr/lib/openfoam/openfoam2112/etc/bashrc'
 alias of9='source /opt/openfoam9/etc/bashrc'
 alias of8='source /opt/openfoam8/etc/bashrc'
 alias ofo='source /opt/openfoam-dev/etc/bashrc'
