@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo apt-get update
+sudo apt-get -y install gcc-4.4  g++ gfortran make python python-dev python-numpy tk bison flex 
+sudo apt-get -y install liblapack-dev libblas-dev libopenblas-dev
+sudo apt-get -y install libboost-python-dev libboost-numpy-dev zlib1g-dev
+wget -P ~/Downloads/ "http://ftp.br.debian.org/debian/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb"
+sudo dpkg -i ~/Downloads/libffi6_3.2.1-9_amd64.deb
+
