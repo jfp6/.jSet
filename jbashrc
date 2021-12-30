@@ -3,6 +3,7 @@ export PYTHONPATH="${PYTHONPATH}:/opt/paraviewopenfoam56/lib/python2.7/site-pack
 export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib"
 export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib/paraview-5.6"
 
+alias jot="python3 ~/Dropbox/settingsSoftware/espanso/scripts/jot/jot.py"
 alias ofdev='source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc'
 alias of9c='source $HOME/OpenFOAM/OpenFOAM-9/etc/bashrc'
 alias ofe='source $HOME/foam/foam-extend-3.2/etc/bashrc'
