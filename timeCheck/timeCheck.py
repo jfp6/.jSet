@@ -15,7 +15,10 @@ def getLastFloatFromString(string,delimiter):
         except:
             num = (float(words[2]),float(words[2]))
     else:
-        num = float(words[-1])
+        if words[-1][-1] =='s':
+            num =float(words[-1][:-2])
+        else:
+            num = float(words[-1])
     return num
 
 
