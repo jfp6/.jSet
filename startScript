@@ -78,7 +78,7 @@ if [ $MACHINE == "gold" ]
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
-    sudo /etc/init.d/opensmd start
+    sudo /etc/init.d/opensm start
 fi
 
 if [ $MACHINE == "rhodium" ]
@@ -91,7 +91,7 @@ if [ $MACHINE == "rhodium" ]
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
-    sudo /etc/init.d/opensmd start
+    sudo /etc/init.d/opensm start
 
     # Mount drives from Aluminum
     sudo mount 172.17.1.232:/media/cfd/bach /mnt/nfs/bach
@@ -123,7 +123,7 @@ if [ $MACHINE == "lithium" ]
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
-    sudo /etc/init.d/opensmd start
+    sudo /etc/init.d/opensm start
 
     # Mount drives from Aluminum
     sudo mount 172.17.1.232:/media/cfd/bach /mnt/nfs/bach
