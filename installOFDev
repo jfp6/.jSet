@@ -7,9 +7,11 @@ sudo add-apt-repository http://dl.openfoam.org/ubuntu
 sudo apt-get update
 sudo apt-get -y install openfoam-dev
 sudo apt-get -y install openfoam9
-# of 2012 and 2106
+# of 2112 and 2106
 sudo apt-get -y install curl
 curl -s https://dl.openfoam.com/add-debian-repo.sh | sudo bash
 wget -q -O - https://dl.openfoam/add-debian-repo.sh | sudo bash
 sudo apt-get -y install openfoam2106-default
+sudo apt-get -y install openfoam2112-default
+
 
