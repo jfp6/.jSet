@@ -1,0 +1,7 @@
+#!/bin/bash
+
+~/clusterResources/MLNX_OFED_LINUX-5.4-3.0.3.0-ubuntu20.04-x86_64/uninstall.sh 
+
+sudo apt install rdma-core libibmad5 opensm ibutils infiniband-diags perftest mstflint openmpi-bin openmpi-common
+
+sudo ./installOFdev
