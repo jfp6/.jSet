@@ -119,7 +119,7 @@ if [ $MACHINE == "rhodiumDrives" ]
     sudo mount 172.17.1.243:/home /mnt/nfs/home
 
     # Start cluster utilization monitor
-    nohup ~/brahms/cpu/clusterStatus.sh
+    nohup /home/cfd/brahms/cpu/clusterStatus.sh > /home/cfd/brahms/cpu/run.out &
 fi
 
 if [ $MACHINE == "lithium" ]
