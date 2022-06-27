@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo mkdir -p /mnt/nfs/liszt
+sudo mkdir -p /mnt/nfs/debussy
+echo "mkdir nfs directories"
+
+ln -s /mnt/nfs/liszt/ ~/liszt
+ln -s /mnt/nfs/debussy/ ~/debussy
+echo "add soft links"
+

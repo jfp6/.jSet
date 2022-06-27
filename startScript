@@ -45,6 +45,8 @@ if [ $MACHINE == "aluminumDrives" ]
     sudo mount 172.17.1.239:/media/cfd/mozart /mnt/nfs/mozart
     sudo mount 172.17.1.239:/media/cfd/telemann /mnt/nfs/telemann
     sudo mount 172.17.1.239:/media/cfd/handel /mnt/nfs/handel
+    sudo mount 172.17.1.239:/media/cfd/liszt /mnt/nfs/liszt
+    sudo mount 172.17.1.239:/media/cfd/debussy /mnt/nfs/debussy
 
     # Mount drives from Lithium
     sudo mount 172.17.1.243:/media/cfd/brahms /mnt/nfs/brahms
@@ -68,6 +70,8 @@ if [ $MACHINE == "gold" ]
     sudo mount 172.17.1.239:/media/cfd/mozart /mnt/nfs/mozart
     sudo mount 172.17.1.239:/media/cfd/telemann /mnt/nfs/telemann
     sudo mount 172.17.1.239:/media/cfd/handel /mnt/nfs/handel
+    sudo mount 172.17.1.239:/media/cfd/liszt /mnt/nfs/liszt
+    sudo mount 172.17.1.239:/media/cfd/debussy /mnt/nfs/debussy
 
     # Mount drives from Lithium
     sudo mount 172.17.1.243:/media/cfd/brahms /mnt/nfs/brahms
@@ -84,10 +88,12 @@ fi
 if [ $MACHINE == "rhodium" ]
     then
     echo "Start Rhodium"
-    sudo mount /dev/sdc1 /media/cfd/telemann
-    sudo mount /dev/nvme1n1p1 /media/cfd/handel
     sudo mount /dev/sda1 /media/cfd/mozart
     sudo mount /dev/sdb1 /media/cfd/chopin
+    sudo mount /dev/sdc1 /media/cfd/telemann
+    sudo mount /dev/nvme1n1p1 /media/cfd/liszt
+    sudo mount /dev/nvme2n1p1 /media/cfd/debussy
+    sudo mount /dev/nvme3n1p1 /media/cfd/handel
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
@@ -136,6 +142,8 @@ if [ $MACHINE == "lithium" ]
     sudo mount 172.17.1.239:/media/cfd/mozart /mnt/nfs/mozart
     sudo mount 172.17.1.239:/media/cfd/telemann /mnt/nfs/telemann
     sudo mount 172.17.1.239:/media/cfd/handel /mnt/nfs/handel
+    sudo mount 172.17.1.239:/media/cfd/liszt /mnt/nfs/liszt
+    sudo mount 172.17.1.239:/media/cfd/debussy /mnt/nfs/debussy
 
     xsetroot -solid "#333333"
 fi
