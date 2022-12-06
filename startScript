@@ -85,6 +85,68 @@ if [ $MACHINE == "gold" ]
     sudo /etc/init.d/opensm start
 fi
 
+if [ $MACHINE == "palladium" ]
+    then
+    echo "Start palladium"
+    # Mount drives from Aluminum
+    sudo mount 172.17.1.232:/media/cfd/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/media/cfd/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/cfd/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/cfd/haydn /mnt/nfs/haydn
+
+    # Mount drives from Rhodium
+    sudo mount 172.17.1.239:/media/cfd/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.239:/media/cfd/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.239:/media/cfd/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/cfd/handel /mnt/nfs/handel
+    sudo mount 172.17.1.239:/media/cfd/liszt /mnt/nfs/liszt
+    sudo mount 172.17.1.239:/media/cfd/debussy /mnt/nfs/debussy
+
+    # Mount drives from Lithium
+    sudo mount 172.17.1.243:/media/cfd/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.243:/media/cfd/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/cfd/scarlatti /mnt/nfs/scarlatti
+    sudo mount 172.17.1.243:/media/cfd/verdi /mnt/nfs/verdi
+    sudo mount 172.17.1.243:/home /mnt/nfs/home
+
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+    sudo /etc/init.d/openibd start
+    sudo ifconfig ibs2 10.0.0.14/24
+    sudo ifconfig ibs2 10.0.0.7/24
+fi
+
+if [ $MACHINE == "scandium" ]
+    then
+    echo "Start scandium"
+    # Mount drives from Aluminum
+    sudo mount 172.17.1.232:/media/cfd/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/media/cfd/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/cfd/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/cfd/haydn /mnt/nfs/haydn
+
+    # Mount drives from Rhodium
+    sudo mount 172.17.1.239:/media/cfd/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.239:/media/cfd/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.239:/media/cfd/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/cfd/handel /mnt/nfs/handel
+    sudo mount 172.17.1.239:/media/cfd/liszt /mnt/nfs/liszt
+    sudo mount 172.17.1.239:/media/cfd/debussy /mnt/nfs/debussy
+
+    # Mount drives from Lithium
+    sudo mount 172.17.1.243:/media/cfd/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.243:/media/cfd/rameau /mnt/nfs/rameau
+    sudo mount 172.17.1.243:/media/cfd/scarlatti /mnt/nfs/scarlatti
+    sudo mount 172.17.1.243:/media/cfd/verdi /mnt/nfs/verdi
+    sudo mount 172.17.1.243:/home /mnt/nfs/home
+
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+    sudo /etc/init.d/openibd start
+    sudo ifconfig ibs2 10.0.0.14/24
+    sudo ifconfig ibs2 10.0.0.11/24
+fi
+
 if [ $MACHINE == "rhodium" ]
     then
     echo "Start Rhodium"

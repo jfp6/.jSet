@@ -4,11 +4,10 @@ sudo apt update
 sudo apt upgrade
 sudo apt install -y net-tools
 sudo apt install -y git
-#cd ~
-#git clone http://www.github.com/jfp6/.jSet
-sudo ~/clusterResources/MLNX_OFED_LINUX-5.5-1.0.3.2-ubuntu20.04-x86_64/mlnxofedinstall --force
-sudo /etc/init.d/opensmd restart
+sudo ../clusterResources/MLNX_OFED_LINUX-5.8-1.1.2.1-ubuntu22.04-x86_64/mlnxofedinstall --force
+sudo /etc/init.d/openibd restart
 sudo cp ~/clusterResources/modules /etc/modules
+sudo ifconfig ibp216s0 10.0.0.11/24
 sudo ./installX2go
 sudo ./mkdirNFSClient
 sudo ./shortcutsVim

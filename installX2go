@@ -2,6 +2,8 @@
 
 sudo apt-add-repository ppa:x2go/stable
 sudo apt-get update
-sudo apt-get -y install x2goserver x2goserver-xsession x2golxdebindings
+sudo apt-get -y install x2goserver x2goserver-xsession
+sudo apt-get -y install x2gomatebindings
+sudo apt-get -y install x2golxdebindings
 
 echo "lxsession -s Lubuntu -e LXDE"
