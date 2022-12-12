@@ -143,8 +143,8 @@ if [ $MACHINE == "scandium" ]
     sudo exportfs -a
     sudo service nfs-kernel-server start
     sudo /etc/init.d/openibd start
-    sudo ifconfig ibs2 10.0.0.14/24
-    sudo ifconfig ibs2 10.0.0.11/24
+    sudo ifconfig ibp216s0 10.0.0.14/24
+    sudo ifconfig ibp216s0 10.0.0.11/24
 fi
 
 if [ $MACHINE == "rhodium" ]
