@@ -12,6 +12,8 @@ sudo mkdir -p /mnt/nfs/chopin
 sudo mkdir -p /mnt/nfs/mozart
 sudo mkdir -p /mnt/nfs/telemann
 sudo mkdir -p /mnt/nfs/handel
+sudo mkdir -p /mnt/nfs/debussy
+sudo mkdir -p /mnt/nfs/liszt
 sudo mkdir -p /mnt/nfs/home
 echo "mkdir nfs directories"
 
@@ -27,5 +29,7 @@ ln -s /mnt/nfs/chopin/ ~/chopin
 ln -s /mnt/nfs/mozart/ ~/mozart
 ln -s /mnt/nfs/telemann/ ~/telemann
 ln -s /mnt/nfs/handel/ ~/handel
+ln -s /mnt/nfs/debussy/ ~/debussy
+ln -s /mnt/nfs/liszt/ ~/liszt
 ln -s /mnt/nfs/home/cfd/OpenFOAM/ ~/OpenFOAM
 echo "add soft links"

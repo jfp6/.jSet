@@ -13,6 +13,8 @@ sudo mkdir -p /media/cfd/chopin
 sudo mkdir -p /media/cfd/telemann
 sudo mkdir -p /media/cfd/handel
 sudo mkdir -p /mnt/nfs/home
+sudo mkdir -p /media/cfd/liszt
+sudo mkdir -p /media/cfd/debussy
 echo "mkdir nfs directories"
 
 ln -s /mnt/nfs/brahms/ ~/brahms
@@ -27,5 +29,8 @@ ln -s /mnt/nfs/vivaldi/ ~/vivaldi
 ln -s /media/cfd/chopin/ ~/chopin
 ln -s /media/cfd/telemann/ ~/telemann
 ln -s /media/cfd/handel/ ~/handel
+ln -s /media/cfd/debussy/ ~/debussy
+ln -s /media/cfd/liszt/ ~/liszt
 ln -s /mnt/nfs/home/cfd/OpenFOAM/ ~/OpenFOAM
 echo "add soft links"
+
