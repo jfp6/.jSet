@@ -1,5 +1,5 @@
 #!/bin/bash
 
 
-sudo apt install rdma-core libibmad5 opensm ibutils2 infiniband-diags perftest mstflint openmpi-bin openmpi-common
+sudo apt install rdma-core libibmad5 opensm ibutils infiniband-diags perftest mstflint openmpi-bin openmpi-common
 

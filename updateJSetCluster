@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#ssh cfd@gold 'rm -rf ~/.jSet'
+ssh cfd@gold 'rm -rf ~/.jSet'
 ssh cfd@silver 'rm -rf ~/.jSet'
 ssh cfd@nickel 'rm -rf ~/.jSet'
 ssh cfd@niobium 'rm -rf ~/.jSet'
@@ -14,7 +14,7 @@ ssh cfd@uranium 'rm -rf ~/.jSet'
 ssh cfd@aluminum 'rm -rf ~/.jSet'
 ssh cfd@lithium 'rm -rf ~/.jSet'
 
-#scp -r ~/.jSet cfd@gold:~/.
+scp -r ~/.jSet cfd@gold:~/.
 scp -r ~/.jSet cfd@silver:~/.
 scp -r ~/.jSet cfd@nickel:~/.
 scp -r ~/.jSet cfd@niobium:~/.
