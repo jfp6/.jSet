@@ -13,6 +13,7 @@ ssh cfd@scandium 'rm -rf ~/.jSet'
 ssh cfd@uranium 'rm -rf ~/.jSet'
 ssh cfd@aluminum 'rm -rf ~/.jSet'
 ssh cfd@lithium 'rm -rf ~/.jSet'
+ssh cfd@brass 'rm -rf ~/.jSet'
 ssh cfd@172.17.1.97 'rm -rf ~/.jSet'
 
 scp -r ~/.jSet cfd@gold:~/.
@@ -28,4 +29,8 @@ scp -r ~/.jSet cfd@scandium:~/.
 scp -r ~/.jSet cfd@uranium:~/.
 scp -r ~/.jSet cfd@aluminum:~/.
 scp -r ~/.jSet cfd@lithium:~/.
+scp -r ~/.jSet cfd@brass:~/.
 scp -r ~/.jSet cfd@172.17.1.97:~/.
+
+ssh cfd@zinc 'rm -rf ~/.jSet'
+scp -r ~/.jSet cfd@zinc:~/.
